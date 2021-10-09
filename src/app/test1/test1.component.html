@@ -1,0 +1,46 @@
+<ul>
+  <li *ngIf="5 > 3">Se cummple la sentencia</li>
+  <li *ngFor="let item of ['first', 'second', 'thrird']; let i = index">
+    {{ item }} esta en la posicion {{ i + 1 }}
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="color" />
+<p>{{ color }}</p>
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">Rojo</p>
+  <p *ngSwitchCase="'blue'">azul</p>
+  <p *ngSwitchCase="'yellow'">Amarillo</p>
+  <p *ngSwitchDefault>Ninguna coincidencia encontrada</p>
+</div>
+
+<ng-template #myelse>
+  <p>Este es mi template en el cso negativo del if</p>
+</ng-template>
+
+<p *ngIf="color.length > 0; else myelse">mensaje dentro del parrafo</p>
+
+<div [style.border]="'5px solid ' + color" [style.background-color]="'pink'">
+  <!--<div [style.border]="'1px solid  red'">-->
+  <!--Directiva de atributos-->
+  Texto de prueba para el cambio de estilos
+</div>
+
+<!--aqui se pueden varios estilos y en el anterior hay que declararlos uno por uno-->
+<p
+  [ngStyle]="{
+    color: color,
+    background: 'yellow'
+  }"
+>
+  texto de prueba paraver que funcione angular
+</p>
+
+<hr />
+<div
+  [ngClass]="{
+    clase: color === 'hola'
+  }"
+>
+  Ngclass
+</div>
