@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { of, BehaviorSubject, Subscription } from 'rxjs';
 import { filter, map, delay } from 'rxjs/operators';
 
@@ -12,6 +12,9 @@ export class RxjsComponent implements OnInit {
   video = 1;
   tictok = new BehaviorSubject(this.video);
   personaASub: Subscription;
+  @ViewChild('mydiv1') mydiv: ElementRef;
+  @ViewChild('myinput1') input: ElementRef;
+  //Se utiliza para controlar las variables que llegan como referencialocal #nombrevariable en el html
 
   constructor() {
     //Persona A
@@ -45,5 +48,11 @@ export class RxjsComponent implements OnInit {
 
   eliminarsub() {
     this.personaASub.unsubscribe();
+  }
+
+  onShowLocalVars() {
+    console.log(this.mydiv);
+    this.input.nativeElement.value = 'Ernesto';
+    console.log(this.input);
   }
 }

@@ -1,2 +1,17 @@
 <button (click)="addVideo()">Add video</button>
 <button (click)="eliminarsub()">Quitar suscripcion</button>
+<hr />
+<div style="border:5px solid green">
+  <h1>rxjs</h1>
+  <input type="checkbox" [(ngModel)]="sw" />
+  <div *myplantilla="sw">Mi propia structure directive</div>
+
+  <div #mydiv1>my div 1 valores insertados</div>
+  <p>{{ mydiv }}</p>
+  <input type="text" #myinput1 />
+
+  <p>{{ input }}</p>
+
+  <button (click)="onShowLocalVars()">Ver locales</button>
+</div>
+<hr />
