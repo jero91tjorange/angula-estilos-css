@@ -13,6 +13,7 @@ import { BuyModule } from './pages/buy/buy.module';
 import { HomeModule } from './pages/home/home.module';
 //componentes propios
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { SharedModule } from './shared/shared.module';
 import { Test1Component } from './test1/test1.component';
 
 @NgModule({
